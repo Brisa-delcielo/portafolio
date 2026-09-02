@@ -5,7 +5,7 @@
     --text-main: #ffffff;
     --text-muted: #d1d1d6;
     
-    /* Tono dorado / ámbar suave que armoniza con Júpiter */
+    /* Tono ámbar/dorado suave que combina con Júpiter */
     --jovian-accent: #d97706;
     --jovian-accent-hover: #f59e0b;
     --jovian-accent-soft: rgba(217, 119, 6, 0.25);
@@ -33,17 +33,18 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* PLANETA JÚPITER HD - FUENTE OPTIMIZADA DE UNSPLASH/CDN */
+/* PLANETA JÚPITER UBICADO AL COSTADO LATERAL DERECHO */
 .jupiter-background {
     position: fixed;
     top: 50%;
-    right: -100px;
+    /* Asoma solo la mitad del planeta en el borde lateral derecho */
+    right: -260px; 
     transform: translateY(-50%);
-    width: 620px;
-    height: 620px;
+    width: 650px;
+    height: 650px;
     border-radius: 50%;
     
-    /* Imagen HD libre de derechos con CORS permitido para proyectos web */
+    /* Imagen HD de Júpiter de CDN rápido */
     background-image: url('https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=1000&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
@@ -51,10 +52,12 @@ body {
     z-index: -2;
     pointer-events: none;
     filter: contrast(1.1) brightness(0.85);
-    box-shadow: -20px 0 60px rgba(0, 0, 0, 0.8);
+    
+    /* Sombra profunda en la curvatura que da el efecto de esfera en el espacio */
+    box-shadow: -40px 0 80px rgba(39, 38, 38, 0.95);
 }
 
-/* Capa de lente polarizado para asegurar nitidez total del texto */
+/* Polarizado suave sobre la superficie visible del planeta */
 .jupiter-background::after {
     content: '';
     position: absolute;
@@ -63,7 +66,7 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(5, 5, 5, 0.2) 0%, rgba(5, 5, 5, 0.65) 100%);
+    background: radial-gradient(circle at 30% 50%, rgba(83, 75, 75, 0.1) 0%, rgba(49, 47, 47, 0.6) 100%);
     pointer-events: none;
 }
 
@@ -154,7 +157,7 @@ body {
     line-height: 1.15;
     letter-spacing: -0.5px;
     margin-bottom: 20px;
-    max-width: 700px;
+    max-width: 650px;
     color: #ffffff;
 }
 
@@ -162,7 +165,7 @@ body {
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--text-muted);
-    max-width: 580px;
+    max-width: 550px;
     line-height: 1.6;
 }
 
@@ -324,15 +327,15 @@ footer {
     letter-spacing: 1px;
 }
 
-/* ADAPTACIÓN MÓVIL */
+/* DISPOSITIVOS MÓVILES */
 @media (max-width: 768px) {
     .jupiter-background {
-        width: 380px;
-        height: 380px;
-        right: -60px;
-        top: 28%;
+        width: 420px;
+        height: 420px;
+        right: -200px;
+        top: 30%;
         transform: translateY(0);
-        filter: contrast(1.1) brightness(0.7);
+        filter: contrast(1.1) brightness(0.75);
     }
 
     .hero h1 {
