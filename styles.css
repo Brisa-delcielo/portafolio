@@ -3,7 +3,7 @@
     --card-bg: rgba(12, 12, 14, 0.85);
     --card-border: rgba(255, 255, 255, 0.15);
     --text-main: #ffffff;
-    --text-muted: #ececee;
+    --text-muted: #d1d1d6;
     
     /* Tono dorado / ámbar suave que armoniza con Júpiter */
     --jovian-accent: #d97706;
@@ -326,4 +326,20 @@ footer {
 
 /* ADAPTACIÓN MÓVIL */
 @media (max-width: 768px) {
-    .jupiter-
+    .jupiter-background {
+        width: 380px;
+        height: 380px;
+        right: -60px;
+        top: 28%;
+        transform: translateY(0);
+        filter: contrast(1.1) brightness(0.7);
+    }
+
+    .hero h1 {
+        font-size: 2.1rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
