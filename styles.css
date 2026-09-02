@@ -1,11 +1,15 @@
 :root {
     --bg-black: #050505;
     --card-bg: rgba(12, 12, 14, 0.85);
-    --card-border: rgba(255, 255, 255, 0.18);
+    --card-border: rgba(255, 255, 255, 0.15);
     --text-main: #ffffff;
-    --text-muted: #d1d1d6; /* Más claro para mayor legibilidad */
-    --jovian-orange: #f97316;
-    --jovian-orange-hover: #ff8c3a;
+    --text-muted: #ececee;
+    
+    /* Tono dorado / ámbar suave que armoniza con Júpiter */
+    --jovian-accent: #d97706;
+    --jovian-accent-hover: #f59e0b;
+    --jovian-accent-soft: rgba(217, 119, 6, 0.25);
+    
     --font-creato: 'Creato Display', -apple-system, sans-serif;
 }
 
@@ -29,25 +33,28 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* PLANETA JÚPITER FLOTANTE CON EFECTO POLARIZADO */
+/* PLANETA JÚPITER HD - FUENTE OPTIMIZADA DE UNSPLASH/CDN */
 .jupiter-background {
     position: fixed;
     top: 50%;
-    right: -180px;
+    right: -100px;
     transform: translateY(-50%);
-    width: 680px;
-    height: 680px;
+    width: 620px;
+    height: 620px;
     border-radius: 50%;
-    background-image: url('jupiter.jpg');
+    
+    /* Imagen HD libre de derechos con CORS permitido para proyectos web */
+    background-image: url('https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=1000&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
+    
     z-index: -2;
     pointer-events: none;
-    opacity: 1;
-    filter: contrast(1.1) brightness(0.85); /* Tono polarizado base */
+    filter: contrast(1.1) brightness(0.85);
+    box-shadow: -20px 0 60px rgba(0, 0, 0, 0.8);
 }
 
-/* Capa de lente polarizado para oscurecer la zona detrás del texto */
+/* Capa de lente polarizado para asegurar nitidez total del texto */
 .jupiter-background::after {
     content: '';
     position: absolute;
@@ -56,11 +63,11 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(5, 5, 5, 0.45) 0%, rgba(5, 5, 5, 0.75) 100%);
+    background: radial-gradient(circle, rgba(5, 5, 5, 0.2) 0%, rgba(5, 5, 5, 0.65) 100%);
     pointer-events: none;
 }
 
-/* NAVBAR / ENCABEZADO MEJORADO */
+/* ENCABEZADO / NAVBAR MEJORADO */
 .navbar {
     width: 100%;
     max-width: 1000px;
@@ -71,9 +78,9 @@ body {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(5, 5, 5, 0.75); /* Fondo oscuro para dar lectura clara */
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--card-border);
     border-radius: 0 0 16px 16px;
 }
@@ -91,10 +98,10 @@ body {
 .jovian-dot {
     width: 10px;
     height: 10px;
-    background-color: var(--jovian-orange);
+    background-color: var(--jovian-accent);
     border-radius: 50%;
     display: inline-block;
-    box-shadow: 0 0 10px var(--jovian-orange);
+    box-shadow: 0 0 8px var(--jovian-accent);
 }
 
 .nav-links {
@@ -113,30 +120,29 @@ body {
 }
 
 .nav-links a:hover {
-    color: var(--jovian-orange);
+    color: var(--jovian-accent-hover);
 }
 
-/* CONTAINER */
+/* CONTENEDOR PRINCIPAL */
 .container {
     width: 100%;
     max-width: 1000px;
     margin-top: 60px;
 }
 
-/* HERO MEJORADO */
+/* HERO */
 .hero {
     margin-bottom: 80px;
 }
 
-/* Badge con nitidez alta */
 .badge-orbit {
     display: inline-block;
     font-size: 0.8rem;
     font-weight: 900;
     letter-spacing: 2px;
     color: #ffffff;
-    background: rgba(249, 115, 22, 0.35);
-    border: 1px solid var(--jovian-orange);
+    background: var(--jovian-accent-soft);
+    border: 1px solid var(--jovian-accent);
     padding: 8px 18px;
     border-radius: 20px;
     margin-bottom: 24px;
@@ -152,7 +158,6 @@ body {
     color: #ffffff;
 }
 
-/* Párrafo con texto de nitidez alta */
 .hero p {
     font-size: 1.2rem;
     font-weight: 700;
@@ -161,7 +166,7 @@ body {
     line-height: 1.6;
 }
 
-/* PROYECTOS */
+/* SECCIÓN PROYECTOS */
 .projects-section {
     margin-bottom: 80px;
 }
@@ -194,14 +199,14 @@ body {
 }
 
 .project-card:hover {
-    border-color: var(--jovian-orange);
+    border-color: var(--jovian-accent);
     transform: translateY(-4px);
 }
 
 .card-tag {
     font-size: 0.75rem;
     font-weight: 900;
-    color: var(--jovian-orange);
+    color: var(--jovian-accent);
     letter-spacing: 1.5px;
     margin-bottom: 16px;
 }
@@ -231,7 +236,7 @@ body {
 .tech-stack span {
     font-size: 0.7rem;
     font-weight: 900;
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.1);
     border: 1px solid var(--card-border);
     padding: 6px 12px;
     border-radius: 8px;
@@ -255,12 +260,12 @@ body {
 }
 
 .btn.primary {
-    background-color: var(--jovian-orange);
+    background-color: var(--jovian-accent);
     color: #ffffff;
 }
 
 .btn.primary:hover {
-    background-color: var(--jovian-orange-hover);
+    background-color: var(--jovian-accent-hover);
 }
 
 .btn.outline {
@@ -319,22 +324,6 @@ footer {
     letter-spacing: 1px;
 }
 
-/* RESPONSIVE PARA MÓVILES (Optimizado para la vista de la captura) */
+/* ADAPTACIÓN MÓVIL */
 @media (max-width: 768px) {
-    .jupiter-background {
-        width: 380px;
-        height: 380px;
-        right: -100px;
-        top: 25%;
-        transform: translateY(0);
-        filter: contrast(1.1) brightness(0.65); /* En móviles polariza más el planeta para que no interfiera */
-    }
-
-    .hero h1 {
-        font-size: 2.1rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-}
+    .jupiter-
