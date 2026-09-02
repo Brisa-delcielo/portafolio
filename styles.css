@@ -5,9 +5,9 @@
     --text-main: #ffffff;
     --text-muted: #d1d1d6;
     
-    /* Tono ámbar/dorado suave que combina con Júpiter */
-    --jovian-accent: #d97706;
-    --jovian-accent-hover: #f59e0b;
+    /* Tono ámbar/dorado suave */
+    --jovian-accent: #c27721;
+    --jovian-accent-hover: #c98207;
     --jovian-accent-soft: rgba(217, 119, 6, 0.25);
     
     --font-creato: 'Creato Display', -apple-system, sans-serif;
@@ -33,18 +33,16 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* PLANETA JÚPITER UBICADO AL COSTADO LATERAL DERECHO */
+/* PLANETA JÚPITER LATERAL EN PANTALLAS GRANDES (PC / LAPTOP) */
 .jupiter-background {
     position: fixed;
     top: 50%;
-    /* Asoma solo la mitad del planeta en el borde lateral derecho */
-    right: -260px; 
+    right: -280px; /* Asoma solo el lateral derecho */
     transform: translateY(-50%);
     width: 650px;
     height: 650px;
     border-radius: 50%;
     
-    /* Imagen HD de Júpiter de CDN rápido */
     background-image: url('https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=1000&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
@@ -52,12 +50,10 @@ body {
     z-index: -2;
     pointer-events: none;
     filter: contrast(1.1) brightness(0.85);
-    
-    /* Sombra profunda en la curvatura que da el efecto de esfera en el espacio */
-    box-shadow: -40px 0 80px rgba(39, 38, 38, 0.95);
+    box-shadow: -40px 0 80px rgba(82, 62, 25, 0.95);
 }
 
-/* Polarizado suave sobre la superficie visible del planeta */
+/* Polarizado sutil */
 .jupiter-background::after {
     content: '';
     position: absolute;
@@ -66,11 +62,11 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: radial-gradient(circle at 30% 50%, rgba(83, 75, 75, 0.1) 0%, rgba(49, 47, 47, 0.6) 100%);
+    background: radial-gradient(circle at 30% 50%, rgba(43, 41, 41, 0.1) 0%, rgba(5, 5, 5, 0.6) 100%);
     pointer-events: none;
 }
 
-/* ENCABEZADO / NAVBAR MEJORADO */
+/* NAVBAR / ENCABEZADO */
 .navbar {
     width: 100%;
     max-width: 1000px;
@@ -327,14 +323,15 @@ footer {
     letter-spacing: 1px;
 }
 
-/* DISPOSITIVOS MÓVILES */
+/* AJUSTE ESPECÍFICO PARA MÓVILES Y PANTALLAS PEQUEÑAS */
 @media (max-width: 768px) {
     .jupiter-background {
-        width: 420px;
-        height: 420px;
-        right: -200px;
-        top: 30%;
-        transform: translateY(0);
+        width: 380px;
+        height: 380px;
+        /* Mantiene el planeta pegado estrictamente al borde derecho en móviles */
+        right: -180px; 
+        top: 50%;
+        transform: translateY(-50%);
         filter: contrast(1.1) brightness(0.75);
     }
 
