@@ -41,11 +41,11 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* PLANETA JÚPITER EN EL FONDO (REAJUSTADO PARA NO CORTARSE EN ESCRITORIO) */
+/* PLANETA JÚPITER EN EL FONDO (PANTALLAS GRANDES) */
 .jupiter-background {
     position: fixed;
     top: 50%;
-    right: -100px;
+    right: -180px;
     transform: translateY(-50%);
     width: 650px;
     height: 650px;
@@ -213,14 +213,14 @@ body {
     opacity: 0.8;
 }
 
-/* GRID CORREGIDO PARA PROPORCIÓN HOMOGÉNEA DE TARJETAS */
+/* GRID CORREGIDO: Fuerza exactamente 3 columnas parejas en escritorio */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
 }
 
-/* FICHAS DE PROYECTO E INTERACTIVIDAD DE JÚPITER */
+/* FICHAS DE PROYECTO */
 .project-card {
     position: relative;
     background-color: var(--card-bg);
@@ -497,7 +497,13 @@ footer {
     text-align: center;
 }
 
-/* RESPONSIVE & OPTIMIZACIÓN MÓVIL */
+/* RESPONSIVE & OPTIMIZACIÓN MÓVIL (MANTENIDO INTACTO) */
+@media (max-width: 900px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
 
     body {
@@ -549,6 +555,10 @@ footer {
 
     .badge-orbit {
         margin: 0 auto 20px auto;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr !important;
     }
 
     .project-card {
