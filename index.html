@@ -5,22 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brisa del Cielo — Galería & Laboratorio de Código</title>
 
-    <!-- FAVICON -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23050505'/><text x='50' y='72' font-family='system-ui, sans-serif' font-weight='900' font-size='70' fill='%23ffffff' text-anchor='middle'>B</text></svg>">
 
-    <!-- FUENTES EDITORIALES DE ALTA GAMA: Newsreader + Plus Jakarta Sans + Space Grotesk -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
-    <!-- ESTILOS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- FONDO JÚPITER -->
     <div class="jupiter-background"></div>
 
-    <!-- NAVBAR -->
     <header class="navbar">
         <div class="logo">
             <span class="jovian-dot"></span> BRISA DEL CIELO
@@ -34,20 +30,17 @@
 
     <main class="container">
         
-        <!-- HERO -->
         <section class="hero">
             <span class="badge-orbit">LABORATORIO & CÓDIGO CREATIVO</span>
             <h1>Construyendo <i>experiencias digitales</i> con precisión y <i>elegancia visual</i>.</h1>
             <p>Especializada en desarrollo web, interfaces empresariales y proyectos interactivos enfocados en rendimiento y estética visual.</p>
         </section>
 
-        <!-- GALERÍA DE PROYECTOS -->
         <section id="galeria" class="projects-section">
             
             <h2 class="section-title">DESARROLLO PROFESIONAL & EXPERIMENTOS</h2>
             <div class="projects-grid">
 
-                <!-- ARCA WEB -->
                 <article class="project-card client-project">
                     <div class="card-tag">01 TRABAJO EMPRESARIAL</div>
                     <h3>ARCA WEB — <i>Plataforma Financiera</i></h3>
@@ -70,7 +63,6 @@
                     </div>
                 </article>
 
-                <!-- VALKYRIE-9 -->
                 <article class="project-card">
                     <div class="card-tag">02 INTERACCIÓN 3D & AEROESPACIAL</div>
                     <h3>VALKYRIE-9 — <i>Manual Técnico 3D</i></h3>
@@ -94,7 +86,6 @@
                     </div>
                 </article>
 
-                <!-- MISIÓN -->
                 <article class="project-card">
                     <div class="card-tag">03 APIS & DASHBOARD</div>
                     <h3>MISIÓN — <i>Dashboard Astronómico</i></h3>
@@ -118,7 +109,6 @@
                     </div>
                 </article>
 
-                <!-- APEX -->
                 <article class="project-card">
                     <div class="card-tag">04 INTERFAZ HUD & SIMULACIÓN</div>
                     <h3>APEX — <i>Simulador Mecánico</i></h3>
@@ -144,18 +134,16 @@
             </div>
         </section>
 
-        <!-- MANIFIESTO -->
         <section id="manifiesto" class="manifesto-section">
-            <h2 class="section-title">MANIFIESTO</h2>
+            <h2 class="section-title">NOTAS DE PROCESO & MANIFIESTO</h2>
             <div class="manifesto-card">
                 <p>Entiendo el código como un medio para materializar ideas, simulaciones físicas y sensaciones visuales. No construyo interfaces solo por cumplir una función, sino por la curiosidad de entender cómo los algoritmos, la geometría y la animación pueden transmitir orden y elegancia.</p>
                 <p>Este espacio funciona como un taller continuo donde cada proyecto es una oportunidad para explorar matemáticas aplicadas, renderizado en vivo y sistemas interactivos.</p>
             </div>
         </section>
 
-        <!-- CONTACTO -->
         <section id="contacto" class="contact-section">
-            <h2><i>¿Tienes alguna </i>idea o pregunta?</h2>
+            <h2>¿Tienes alguna <i>idea</i> o <i>pregunta</i>?</h2>
             <p>Me encanta conectar con personas interesadas en el desarrollo interactivo. Escríbeme y lo platicamos.</p>
             <div class="contact-buttons">
                 <a href="mailto:361001172b@gmail.com" class="btn primary large">ENVIAR CORREO ↗</a>
@@ -169,8 +157,9 @@
         <p>© 2026 BRISA DEL CIELO — INSPIRADO EN LA ATMÓSFERA DE JÚPITER</p>
     </footer>
 
-    <!-- SCRIPT PARTICULAS POLVO ATMOSFÉRICO DE JÚPITER -->
     <script>
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
         document.querySelectorAll('.project-card').forEach(card => {
             const canvas = document.createElement('canvas');
             canvas.classList.add('card-particles');
@@ -239,19 +228,21 @@
                 }
             }
 
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
+            if (!isTouchDevice) {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
 
-                for (let i = 0; i < 3; i++) {
-                    particles.push(new DustParticle(x, y));
-                }
+                    for (let i = 0; i < 3; i++) {
+                        particles.push(new DustParticle(x, y));
+                    }
 
-                if (!animId) {
-                    render();
-                }
-            });
+                    if (!animId) {
+                        render();
+                    }
+                });
+            }
         });
     </script>
 </body>
