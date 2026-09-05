@@ -1,16 +1,19 @@
 :root {
     --bg-black: #050505;
-    --card-bg: rgba(12, 12, 14, 0.85);
-    --card-border: rgba(255, 255, 255, 0.15);
+    --card-bg: rgba(12, 12, 14, 0.75);
+    --card-border: rgba(255, 255, 255, 0.12);
     --text-main: #ffffff;
-    --text-muted: #d1d1d6;
+    --text-muted: #d0cecd;
     
-    /* Tono ámbar/dorado suave */
+    /* Tonos ambarinos jovianos */
     --jovian-accent: #c27721;
-    --jovian-accent-hover: #c98207;
-    --jovian-accent-soft: rgba(217, 119, 6, 0.25);
+    --jovian-accent-hover: #d88a2e;
+    --jovian-accent-soft: rgba(194, 119, 33, 0.18);
     
-    --font-creato: 'Creato Display', -apple-system, sans-serif;
+    /* TIPOGRAFÍAS EDITORIALES FLUIDAS */
+    --font-heading: 'Newsreader', Georgia, serif;       /* Cursiva estilo revista/editorial de lujo */
+    --font-space: 'Space Grotesk', sans-serif;          /* Etiquetas, Menú y Botones */
+    --font-body: 'Plus Jakarta Sans', sans-serif;       /* Subtextos modernos y ultra-legibles */
 }
 
 * {
@@ -22,8 +25,9 @@
 body {
     background-color: var(--bg-black);
     color: var(--text-main);
-    font-family: var(--font-creato);
-    font-weight: 700;
+    font-family: var(--font-body);
+    font-weight: 300;
+    letter-spacing: 0.1px;
     padding: 0 24px;
     display: flex;
     flex-direction: column;
@@ -33,11 +37,11 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* PLANETA JÚPITER LATERAL EN PANTALLAS GRANDES (PC / LAPTOP) */
+/* PLANETA JÚPITER EN EL FONDO */
 .jupiter-background {
     position: fixed;
     top: 50%;
-    right: -280px; /* Asoma solo el lateral derecho */
+    right: -280px;
     transform: translateY(-50%);
     width: 650px;
     height: 650px;
@@ -53,7 +57,6 @@ body {
     box-shadow: -40px 0 80px rgba(82, 62, 25, 0.95);
 }
 
-/* Polarizado sutil */
 .jupiter-background::after {
     content: '';
     position: absolute;
@@ -66,7 +69,7 @@ body {
     pointer-events: none;
 }
 
-/* NAVBAR / ENCABEZADO */
+/* NAVBAR */
 .navbar {
     width: 100%;
     max-width: 1000px;
@@ -85,9 +88,10 @@ body {
 }
 
 .logo {
-    font-size: 1.1rem;
-    font-weight: 900;
-    letter-spacing: 1.5px;
+    font-family: var(--font-space);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 2.5px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -110,12 +114,13 @@ body {
 }
 
 .nav-links a {
+    font-family: var(--font-space);
     text-decoration: none;
     color: #ffffff;
-    font-size: 0.85rem;
-    font-weight: 900;
-    letter-spacing: 1.5px;
-    transition: color 0.2s;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -135,47 +140,73 @@ body {
 }
 
 .badge-orbit {
+    font-family: var(--font-space);
     display: inline-block;
-    font-size: 0.8rem;
-    font-weight: 900;
-    letter-spacing: 2px;
-    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    color: #ffd075;
     background: var(--jovian-accent-soft);
-    border: 1px solid var(--jovian-accent);
-    padding: 8px 18px;
+    border: 1px solid rgba(194, 119, 33, 0.4);
+    padding: 6px 16px;
     border-radius: 20px;
     margin-bottom: 24px;
+    backdrop-filter: blur(8px);
 }
 
+/* ENCABEZADOS PRINCIPALES EDITORIALES */
 .hero h1 {
-    font-size: 2.8rem;
-    font-weight: 900;
+    font-family: var(--font-heading);
+    font-size: 3.6rem;
+    font-weight: 400;
     line-height: 1.15;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.3px;
     margin-bottom: 20px;
-    max-width: 650px;
+    max-width: 850px;
     color: #ffffff;
+}
+
+/* PALABRAS CLAVE EN CURSIVA ELEGANTE (ITALICS) */
+.hero h1 i, .hero h1 em,
+.project-card h3 i, .project-card h3 em,
+.contact-section h2 i, .contact-section h2 em {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-weight: 400;
+    color: #ffffff;
+    padding-right: 3px;
+}
+
+/* SUBTEXTOS Y PÁRRAFOS */
+.hero p,
+.project-card p,
+.manifesto-card p,
+.contact-section p {
+    font-family: var(--font-body);
+    font-size: 0.98rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.7;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--text-muted);
-    max-width: 550px;
-    line-height: 1.6;
+    font-size: 1.08rem;
+    max-width: 620px;
 }
 
-/* SECCIÓN PROYECTOS */
+/* GALERÍA DE PROYECTOS */
 .projects-section {
     margin-bottom: 80px;
 }
 
 .section-title {
-    font-size: 0.9rem;
-    font-weight: 900;
-    letter-spacing: 2px;
+    font-family: var(--font-space);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 3px;
     color: var(--text-muted);
     margin-bottom: 28px;
+    opacity: 0.8;
 }
 
 .projects-grid {
@@ -184,7 +215,9 @@ body {
     gap: 24px;
 }
 
+/* FICHAS DE PROYECTO E INTERACTIVIDAD DE JÚPITER */
 .project-card {
+    position: relative;
     background-color: var(--card-bg);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -194,37 +227,145 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: all 0.3s ease;
+    overflow: hidden;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.5s ease, 
+                box-shadow 0.5s ease;
+    cursor: default;
+}
+
+/* CANVAS DE PARTICULAS DE POLVO */
+.card-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.project-card > *:not(.card-particles) {
+    position: relative;
+    z-index: 2;
+}
+
+/* Resplandor Joviano al hacer Hover */
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle at 30% 30%, 
+        rgba(194, 119, 33, 0.22) 0%, 
+        rgba(201, 130, 7, 0.08) 35%, 
+        transparent 70%
+    );
+    opacity: 0;
+    transform: scale(0.8) rotate(0deg);
+    transition: opacity 0.6s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Línea de plasma magnética */
+.project-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+        90deg, 
+        transparent, 
+        var(--jovian-accent), 
+        #ffd075, 
+        transparent
+    );
+    transition: left 0.75s ease-in-out;
+    pointer-events: none;
+    z-index: 2;
 }
 
 .project-card:hover {
-    border-color: var(--jovian-accent);
-    transform: translateY(-4px);
+    transform: translateY(-6px) scale(1.01);
+    border-color: rgba(194, 119, 33, 0.6);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8),
+                0 0 30px rgba(194, 119, 33, 0.25),
+                inset 0 0 15px rgba(194, 119, 33, 0.1);
+}
+
+.project-card:hover::before {
+    opacity: 1;
+    transform: scale(1) rotate(10deg);
+}
+
+.project-card:hover::after {
+    left: 100%;
 }
 
 .card-tag {
-    font-size: 0.75rem;
-    font-weight: 900;
+    font-family: var(--font-space);
+    font-size: 0.72rem;
+    font-weight: 600;
     color: var(--jovian-accent);
-    letter-spacing: 1.5px;
-    margin-bottom: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
 }
 
 .project-card h3 {
-    font-size: 1.4rem;
-    font-weight: 900;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 400;
     margin-bottom: 12px;
     color: #ffffff;
+    line-height: 1.2;
 }
 
 .project-card p {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin-bottom: 24px;
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin-bottom: 20px;
 }
 
+/* NOTAS DE CAMPO */
+.field-notes {
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 3px solid var(--jovian-accent);
+    padding: 12px 16px;
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 20px;
+    transition: all 0.4s ease;
+}
+
+.project-card:hover .field-notes {
+    background: rgba(194, 119, 33, 0.12);
+    border-left-color: #ffd075;
+    box-shadow: inset 10px 0 20px -10px rgba(194, 119, 33, 0.3);
+}
+
+.notes-label {
+    font-family: var(--font-space);
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--jovian-accent);
+    margin-bottom: 4px;
+}
+
+.field-notes p {
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: #e2e0df;
+    margin-bottom: 0;
+}
+
+/* ETIQUETAS TÉCNICAS */
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
@@ -233,13 +374,22 @@ body {
 }
 
 .tech-stack span {
-    font-size: 0.7rem;
-    font-weight: 900;
-    background: rgba(255, 255, 255, 0.1);
+    font-family: var(--font-space);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    background: rgba(255, 255, 255, 0.04);
     border: 1px solid var(--card-border);
     padding: 6px 12px;
     border-radius: 8px;
-    color: #ffffff;
+    color: #e0dedc;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .tech-stack span {
+    border-color: rgba(255, 208, 117, 0.4);
+    background: rgba(194, 119, 33, 0.2);
+    text-shadow: 0 0 8px rgba(255, 208, 117, 0.6);
 }
 
 .card-actions {
@@ -247,15 +397,35 @@ body {
     gap: 12px;
 }
 
+/* MANIFIESTO */
+.manifesto-section {
+    margin-bottom: 80px;
+}
+
+.manifesto-card {
+    background-color: var(--card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
 /* BOTONES */
 .btn {
+    font-family: var(--font-space);
     text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 900;
-    padding: 12px 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    padding: 12px 22px;
     border-radius: 12px;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
     display: inline-block;
+    text-align: center;
 }
 
 .btn.primary {
@@ -265,6 +435,7 @@ body {
 
 .btn.primary:hover {
     background-color: var(--jovian-accent-hover);
+    box-shadow: 0 0 16px rgba(216, 138, 46, 0.4);
 }
 
 .btn.outline {
@@ -275,11 +446,12 @@ body {
 
 .btn.outline:hover {
     border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .btn.large {
     padding: 16px 28px;
-    font-size: 0.95rem;
+    font-size: 0.88rem;
 }
 
 /* CONTACTO */
@@ -295,17 +467,11 @@ body {
 }
 
 .contact-section h2 {
-    font-size: 2rem;
-    font-weight: 900;
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 400;
     margin-bottom: 12px;
     color: #ffffff;
-}
-
-.contact-section p {
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--text-muted);
-    margin-bottom: 28px;
 }
 
 .contact-buttons {
@@ -313,22 +479,24 @@ body {
     justify-content: center;
     gap: 16px;
     flex-wrap: wrap;
+    margin-top: 24px;
 }
 
 footer {
     padding: 32px 0;
-    font-size: 0.75rem;
-    font-weight: 900;
+    font-family: var(--font-space);
+    font-size: 0.72rem;
+    font-weight: 500;
     color: var(--text-muted);
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    text-align: center;
 }
 
-/* AJUSTE ESPECÍFICO PARA MÓVILES Y PANTALLAS PEQUEÑAS */
+/* RESPONSIVE */
 @media (max-width: 768px) {
     .jupiter-background {
         width: 380px;
         height: 380px;
-        /* Mantiene el planeta pegado estrictamente al borde derecho en móviles */
         right: -180px; 
         top: 50%;
         transform: translateY(-50%);
@@ -336,10 +504,10 @@ footer {
     }
 
     .hero h1 {
-        font-size: 2.1rem;
+        font-size: 2.6rem;
     }
 
-    .hero p {
-        font-size: 1rem;
+    .manifesto-card {
+        padding: 24px;
     }
 }
