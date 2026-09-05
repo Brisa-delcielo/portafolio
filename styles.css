@@ -41,11 +41,11 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* PLANETA JÚPITER EN EL FONDO */
+/* PLANETA JÚPITER EN EL FONDO (REAJUSTADO PARA NO CORTARSE EN ESCRITORIO) */
 .jupiter-background {
     position: fixed;
     top: 50%;
-    right: -280px;
+    right: -100px;
     transform: translateY(-50%);
     width: 650px;
     height: 650px;
@@ -213,9 +213,10 @@ body {
     opacity: 0.8;
 }
 
+/* GRID CORREGIDO PARA PROPORCIÓN HOMOGÉNEA DE TARJETAS */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 24px;
 }
 
@@ -496,14 +497,13 @@ footer {
     text-align: center;
 }
 
-/* RESPONSIVE & OPTIMIZACIÓN MÓVIL (CORREGIDO Y CENTRADO) */
+/* RESPONSIVE & OPTIMIZACIÓN MÓVIL */
 @media (max-width: 768px) {
 
     body {
         padding: 0 16px;
     }
 
-    /* Reducción del planeta para evitar desbordamiento */
     .jupiter-background {
         width: 260px;
         height: 260px;
@@ -514,7 +514,6 @@ footer {
         box-shadow: -15px 0 30px rgba(82, 62, 25, 0.5);
     }
 
-    /* Navbar centrado en móvil */
     .navbar {
         flex-direction: column;
         align-items: center;
@@ -535,7 +534,6 @@ footer {
         font-size: 0.72rem;
     }
 
-    /* Centrado de encabezado hero */
     .hero {
         text-align: center;
         margin-bottom: 50px;
@@ -569,7 +567,6 @@ footer {
         font-size: 2.1rem;
     }
 
-    /* DESACTIVACIÓN DE DESENFOQUE PESADO EN CELULARES */
     .navbar,
     .project-card,
     .manifesto-card,
