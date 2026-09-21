@@ -11,9 +11,9 @@
     --jovian-accent-soft: rgba(194, 119, 33, 0.18);
     
     /* TIPOGRAFÍAS EDITORIALES FLUIDAS */
-    --font-heading: 'Newsreader', Georgia, serif;       /* Cursiva estilo revista/editorial de lujo */
-    --font-space: 'Space Grotesk', sans-serif;          /* Etiquetas, Menú y Botones */
-    --font-body: 'Plus Jakarta Sans', sans-serif;       /* Subtextos modernos y ultra-legibles */
+    --font-heading: 'Newsreader', Georgia, serif;
+    --font-space: 'Space Grotesk', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
 }
 
 * {
@@ -25,6 +25,7 @@
 html, body {
     width: 100%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -41,7 +42,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* PLANETA JÚPITER EN EL FONDO (PANTALLAS GRANDES) */
+/* PLANETA JÚPITER EN EL FONDO */
 .jupiter-background {
     position: fixed;
     top: 50%;
@@ -50,11 +51,9 @@ body {
     width: 650px;
     height: 650px;
     border-radius: 50%;
-    
     background-image: url('https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=1000&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
-    
     z-index: -2;
     pointer-events: none;
     filter: contrast(1.1) brightness(0.85);
@@ -140,7 +139,7 @@ body {
 
 /* HERO */
 .hero {
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }
 
 .badge-orbit {
@@ -158,7 +157,6 @@ body {
     backdrop-filter: blur(8px);
 }
 
-/* ENCABEZADOS PRINCIPALES EDITORIALES */
 .hero h1 {
     font-family: var(--font-heading);
     font-size: 3.6rem;
@@ -170,10 +168,8 @@ body {
     color: #ffffff;
 }
 
-/* PALABRAS CLAVE EN CURSIVA ELEGANTE (ITALICS) */
 .hero h1 i, .hero h1 em,
-.project-card h3 i, .project-card h3 em,
-.contact-section h2 i, .contact-section h2 em {
+.project-card h3 i, .project-card h3 em {
     font-family: var(--font-heading);
     font-style: italic;
     font-weight: 400;
@@ -181,11 +177,10 @@ body {
     padding-right: 3px;
 }
 
-/* SUBTEXTOS Y PÁRRAFOS */
 .hero p,
 .project-card p,
 .manifesto-card p,
-.contact-section p {
+.block-desc {
     font-family: var(--font-body);
     font-size: 0.98rem;
     font-weight: 300;
@@ -195,12 +190,59 @@ body {
 
 .hero p {
     font-size: 1.08rem;
-    max-width: 620px;
+    max-width: 650px;
 }
 
-/* GALERÍA DE PROYECTOS */
+/* MANIFIESTO */
+.manifesto-section {
+    margin-bottom: 90px;
+}
+
+.manifesto-card {
+    background-color: var(--card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* ESTILOS DE BLOQUES & SECTORES */
 .projects-section {
-    margin-bottom: 80px;
+    margin-bottom: 90px;
+}
+
+.block-header {
+    margin-bottom: 32px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 16px;
+}
+
+.block-number {
+    font-family: var(--font-space);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #ffd075;
+    letter-spacing: 3px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.block-header h2 {
+    font-family: var(--font-space);
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.block-desc {
+    font-size: 0.92rem;
+    color: var(--text-muted);
 }
 
 .section-title {
@@ -213,7 +255,7 @@ body {
     opacity: 0.8;
 }
 
-/* GRID CORREGIDO: Fuerza exactamente 3 columnas parejas en escritorio */
+/* GRID CORREGIDO: 3 columnas */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -239,7 +281,6 @@ body {
     cursor: default;
 }
 
-/* CANVAS DE PARTICULAS DE POLVO */
 .card-particles {
     position: absolute;
     top: 0;
@@ -255,7 +296,7 @@ body {
     z-index: 2;
 }
 
-/* Resplandor Joviano al hacer Hover */
+/* Resplandor Joviano Hover */
 .project-card::before {
     content: '';
     position: absolute;
@@ -276,7 +317,6 @@ body {
     z-index: 0;
 }
 
-/* Línea de plasma magnética */
 .project-card::after {
     content: '';
     position: absolute;
@@ -324,7 +364,7 @@ body {
 
 .project-card h3 {
     font-family: var(--font-heading);
-    font-size: 2rem;
+    font-size: 1.85rem;
     font-weight: 400;
     margin-bottom: 12px;
     color: #ffffff;
@@ -400,23 +440,7 @@ body {
 .card-actions {
     display: flex;
     gap: 12px;
-}
-
-/* MANIFIESTO */
-.manifesto-section {
-    margin-bottom: 80px;
-}
-
-.manifesto-card {
-    background-color: var(--card-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid var(--card-border);
-    border-radius: 20px;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+    flex-wrap: wrap;
 }
 
 /* BOTONES */
@@ -454,50 +478,32 @@ body {
     background: rgba(255, 255, 255, 0.05);
 }
 
-.btn.large {
-    padding: 16px 28px;
-    font-size: 0.88rem;
+.btn.outline.disabled {
+    opacity: 0.4;
+    border-color: var(--card-border);
+    cursor: not-allowed;
 }
 
-/* CONTACTO */
-.contact-section {
-    background-color: var(--card-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid var(--card-border);
-    border-radius: 24px;
-    padding: 48px;
-    text-align: center;
-    margin-bottom: 80px;
-}
-
-.contact-section h2 {
-    font-family: var(--font-heading);
-    font-size: 2.8rem;
-    font-weight: 400;
-    margin-bottom: 12px;
-    color: #ffffff;
-}
-
-.contact-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-top: 24px;
+.btn.outline.disabled:hover {
+    background: transparent;
+    border-color: var(--card-border);
 }
 
 footer {
-    padding: 32px 0;
+    padding: 40px 0;
     font-family: var(--font-space);
     font-size: 0.72rem;
     font-weight: 500;
     color: var(--text-muted);
     letter-spacing: 1.5px;
     text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 40px;
 }
 
-/* RESPONSIVE & OPTIMIZACIÓN MÓVIL (MANTENIDO INTACTO) */
+/* RESPONSIVE & OPTIMIZACIÓN MÓVIL */
 @media (max-width: 900px) {
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -505,7 +511,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-
     body {
         padding: 0 16px;
     }
@@ -561,26 +566,13 @@ footer {
         grid-template-columns: 1fr !important;
     }
 
-    .project-card {
+    .project-card, .manifesto-card {
         padding: 24px;
-    }
-
-    .manifesto-card {
-        padding: 24px;
-    }
-
-    .contact-section {
-        padding: 32px 20px;
-    }
-
-    .contact-section h2 {
-        font-size: 2.1rem;
     }
 
     .navbar,
     .project-card,
-    .manifesto-card,
-    .contact-section {
+    .manifesto-card {
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
         background-color: rgba(12, 12, 14, 0.95) !important;

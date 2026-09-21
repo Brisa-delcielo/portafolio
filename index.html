@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brisa del Cielo — Galería & Laboratorio de Código</title>
+    <title>Brisa del Cielo — Archivo & Galería Multidisciplinaria</title>
 
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23050505'/><text x='50' y='72' font-family='system-ui, sans-serif' font-weight='900' font-size='70' fill='%23ffffff' text-anchor='middle'>B</text></svg>">
 
@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
 
@@ -22,139 +22,208 @@
             <span class="jovian-dot"></span> BRISA DEL CIELO
         </div>
         <nav class="nav-links">
-            <a href="#galeria">GALERÍA</a>
+            <a href="#bloque-artistico">CREACIÓN</a>
+            <a href="#bloque-analitico">ANÁLISIS</a>
             <a href="#manifiesto">MANIFIESTO</a>
-            <a href="#contacto" class="btn-nav">CONECTAR</a>
         </nav>
     </header>
 
     <main class="container">
         
         <section class="hero">
-            <span class="badge-orbit">LABORATORIO & CÓDIGO CREATIVO</span>
-            <h1>Construyendo <i>experiencias digitales</i> con precisión y <i>elegancia visual</i>.</h1>
-            <p>Especializada en desarrollo web, interfaces empresariales y proyectos interactivos enfocados en rendimiento y estética visual.</p>
-        </section>
-
-        <section id="galeria" class="projects-section">
-            
-            <h2 class="section-title">DESARROLLO PROFESIONAL & EXPERIMENTOS</h2>
-            <div class="projects-grid">
-
-                <article class="project-card client-project">
-                    <div class="card-tag">01 TRABAJO EMPRESARIAL</div>
-                    <h3>ARCA WEB — <i>Plataforma Financiera</i></h3>
-                    <p>Plataforma web corporativa desarrollada para una entidad de inversiones y créditos por fideicomiso. Interfaz moderna y estructurada, enfocada en generar confianza, brindar información clara sobre servicios financieros y facilitar la conversión de clientes.</p>
-
-                    <div class="field-notes">
-                        <span class="notes-label">ENFOQUE DE DISEÑO</span>
-                        <p>Diseño enfocado en la psicología de la tipografía, jerarquía de datos y estructuración visual sólida para transmitir seguridad institucional.</p>
-                    </div>
-                    
-                    <div class="tech-stack">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JAVASCRIPT</span>
-                        <span>ENTERPRISE UI</span>
-                    </div>
-
-                    <div class="card-actions">
-                        <a href="https://arcainvestor.com" target="_blank" class="btn primary">VER DEMO ↗</a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="card-tag">02 INTERACCIÓN 3D & AEROESPACIAL</div>
-                    <h3>VALKYRIE-9 — <i>Manual Técnico 3D</i></h3>
-                    <p>Manual técnico interactivo y visor 3D de una nave espacial en el vacío. Permite la manipulación del modelo tridimensional mediante interacción directa del usuario y presenta módulos desplegables sobre física y navegación orbital.</p>
-
-                    <div class="field-notes">
-                        <span class="notes-label">NOTAS DEL PROYECTO</span>
-                        <p>Exploración de la física de la iluminación, renders interactivos en tiempo real y componentes desplegables de información técnica.</p>
-                    </div>
-                    
-                    <div class="tech-stack">
-                        <span>HTML5</span>
-                        <span>CSS3 ANIMATIONS</span>
-                        <span>THREE.JS / CANVAS</span>
-                        <span>VANILLA JS</span>
-                    </div>
-
-                    <div class="card-actions">
-                        <a href="https://brisa-delcielo.github.io/valkyrie" target="_blank" class="btn primary">VER DEMO ↗</a>
-                        <a href="https://github.com/Brisa-delcielo/valkyrie" target="_blank" class="btn outline">CÓDIGO ↗</a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="card-tag">03 APIS & DASHBOARD</div>
-                    <h3>MISIÓN — <i>Dashboard Astronómico</i></h3>
-                    <p>Dashboard espacial en tiempo real conectado con las APIs oficiales de la NASA (APOD y NeoWS). Permite la exploración interactiva de imágenes astronómicas diarias y el seguimiento en vivo de asteroides cercanos a la Tierra, con soporte multi-idioma.</p>
-
-                    <div class="field-notes">
-                        <span class="notes-label">NOTAS DEL PROYECTO</span>
-                        <p>Integración de servicios REST, manejo de estados asíncronos y maquetación adaptativa de tableros de datos complejas.</p>
-                    </div>
-                    
-                    <div class="tech-stack">
-                        <span>HTML5</span>
-                        <span>CSS GRID</span>
-                        <span>VANILLA JS</span>
-                        <span>NASA APIS</span>
-                    </div>
-
-                    <div class="card-actions">
-                        <a href="https://brisa-delcielo.github.io/mision/" target="_blank" class="btn primary">VER DEMO ↗</a>
-                        <a href="https://github.com/Brisa-delcielo/mision" target="_blank" class="btn outline">CÓDIGO ↗</a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="card-tag">04 INTERFAZ HUD & SIMULACIÓN</div>
-                    <h3>APEX — <i>Simulador Mecánico</i></h3>
-                    <p>Interfaz estilo HUD (Heads-Up Display) con animación técnica en HTML5 Canvas. Simula el funcionamiento dinámico de un motor de combustión calculando en tiempo real la velocidad angular (RPM), relación peso/potencia y distancia de frenado.</p>
-
-                    <div class="field-notes">
-                        <span class="notes-label">NOTAS DEL PROYECTO</span>
-                        <p>Simulación matemática en tiempo real mediante canvas bidimensional y controles interactivos de aceleración e inercia.</p>
-                    </div>
-                    
-                    <div class="tech-stack">
-                        <span>HTML5 CANVAS</span>
-                        <span>CSS HUD UI</span>
-                        <span>VANILLA JS</span>
-                    </div>
-
-                    <div class="card-actions">
-                        <a href="https://brisa-delcielo.github.io/apex/" target="_blank" class="btn primary">VER DEMO ↗</a>
-                        <a href="https://github.com/Brisa-delcielo/apex" target="_blank" class="btn outline">CÓDIGO ↗</a>
-                    </div>
-                </article>
-
-            </div>
+            <span class="badge-orbit">ARCHIVO MULTIDISCIPLINARIO</span>
+            <h1>Exploraciones a través de la <i>imagen</i>, la <i>palabra</i>, el <i>sonido</i> y la <i>lógica</i>.</h1>
+            <p>Escribo, ilustro, canto, investigo y desarrollo experiencias interactivas mediante código. Un espacio donde la creación artística y el pensamiento analítico conviven en constante evolución.</p>
         </section>
 
         <section id="manifiesto" class="manifesto-section">
             <h2 class="section-title">NOTAS DE PROCESO & MANIFIESTO</h2>
             <div class="manifesto-card">
-                <p>Entiendo el código como un medio para materializar ideas, simulaciones físicas y sensaciones visuales. No construyo interfaces solo por cumplir una función, sino por la curiosidad de entender cómo los algoritmos, la geometría y la animación pueden transmitir orden y elegancia.</p>
-                <p>Este espacio funciona como un taller continuo donde cada proyecto es una oportunidad para explorar matemáticas aplicadas, renderizado en vivo y sistemas interactivos.</p>
+                <p>Entiendo la creación como una búsqueda integral: desde la sensibilidad poética, la narrativa visual y las frecuencias sonoras, hasta la estructura rigurosa de la investigación científica y la programación de sistemas interactivos.</p>
+                <p>Este archivo no es solo un escaparate, sino un taller vivo donde cada sector registra una dimensión distinta de mi proceso de aprendizaje, exploración y expresión.</p>
             </div>
         </section>
 
-        <section id="contacto" class="contact-section">
-            <h2>¿Tienes alguna <i>idea</i> o <i>pregunta</i>?</h2>
-            <p>Me encanta conectar con personas interesadas en el desarrollo interactivo. Escríbeme y lo platicamos.</p>
-            <div class="contact-buttons">
-                <a href="mailto:361001172b@gmail.com" class="btn primary large">ENVIAR CORREO ↗</a>
-                <a href="https://github.com/Brisa-delcielo" target="_blank" class="btn outline large">GITHUB ↗</a>
+        <section id="bloque-artistico" class="projects-section">
+            <div class="block-header">
+                <span class="block-number">01</span>
+                <h2>CREACIÓN & EXPRESIÓN</h2>
+                <p class="block-desc">Obra visual, producción literaria y composiciones sonoras.</p>
+            </div>
+
+            <div class="projects-grid">
+
+                <article class="project-card">
+                    <div class="card-tag">ILUSTRACIÓN & ARTE VISUAL</div>
+                    <h3>OBRAS VISUALES — <i>Bocetos & Piezas Digitales</i></h3>
+                    <p>Colección de ilustraciones, estudios anatómicos, gráficos vectoriales y piezas conceptuales en diversas técnicas.</p>
+
+                    <div class="field-notes">
+                        <span class="notes-label">ESTADO DEL ARCHIVO</span>
+                        <p>Obras en proceso de digitalización y montaje para exhibición en alta resolución.</p>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <span>TINTA</span>
+                        <span>DIGITAL</span>
+                        <span>ILUSTRACIÓN</span>
+                    </div>
+
+                    <div class="card-actions">
+                        <span class="btn outline disabled">PRÓXIMAMENTE ↗</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="card-tag">LITERATURA & ILUSTRACIÓN</div>
+                    <h3>PROSA & NARRATIVA — <i>Textos e Imágenes</i></h3>
+                    <p>Selección de escritos, poemas y ensayos ilustrados donde la palabra dialoga directamente con la imagen acompañante.</p>
+
+                    <div class="field-notes">
+                        <span class="notes-label">FRAGMENTO</span>
+                        <p><i>"Cita o breves líneas del poema/escrito para atrapar al lector..."</i></p>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <span>NARRATIVA</span>
+                        <span>POESÍA</span>
+                        <span>ILUSTRACIÓN EDITORIAL</span>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="#" class="btn primary">LEER ESCRITO ↗</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="card-tag">MÚSICA & COMPOSICIÓN</div>
+                    <h3>PROYECTO SONORO — <i>Producción Audiovisual</i></h3>
+                    <p>Exploración vocal y composición musical original. Presentación audiovisual con videoclip alojado en canal personal.</p>
+
+                    <div class="field-notes">
+                        <span class="notes-label">NOTAS DE PRODUCCIÓN</span>
+                        <p>Composición de voz, arreglos instrumentales y concepto de la lírica.</p>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <span>CANTO</span>
+                        <span>COMPOSICIÓN</span>
+                        <span>AUDIOVISUAL</span>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="https://youtube.com" target="_blank" class="btn primary">VER EN YOUTUBE ↗</a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="bloque-analitico" class="projects-section">
+            <div class="block-header">
+                <span class="block-number">02</span>
+                <h2>ANÁLISIS & SISTEMAS</h2>
+                <p class="block-desc">Investigación científica, simulaciones físicas y desarrollo en código.</p>
+            </div>
+
+            <div class="projects-grid">
+
+                <article class="project-card">
+                    <div class="card-tag">INVESTIGACIÓN CIENTÍFICA</div>
+                    <h3>ESTUDIO & MANUSCRITO — <i>Título de la Investigación</i></h3>
+                    <p>Artículos, ensayos y reportes científicos centrados en el análisis teórico, metodologías experimentales y recopilación de datos.</p>
+
+                    <div class="field-notes">
+                        <span class="notes-label">ABSTRACT / SÍNTESIS</span>
+                        <p>Breve resumen de la hipótesis principal, la metodología empleada y las conclusiones clave del proyecto de investigación.</p>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <span>ACADÉMICO</span>
+                        <span>ANÁLISIS DE DATOS</span>
+                        <span>PUBLICACIÓN</span>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="#" class="btn primary">LEER ABSTRACT ↗</a>
+                        <a href="#" class="btn outline">DESCARGAR PDF ↗</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="card-tag">INTERACCIÓN 3D & AEROESPACIAL</div>
+                    <h3>VALKYRIE-9 — <i>Manual Técnico 3D</i></h3>
+                    <p>Visor e interfaz 3D interactiva de una nave espacial en el vacío. Permite la manipulación directa del modelo tridimensional e integra módulos sobre navegación y física orbital.</p>
+
+                    <div class="field-notes">
+                        <span class="notes-label">ENFOQUE TÉCNICO</span>
+                        <p>Renderizado 3D en tiempo real, manejo de iluminación y controles de física espacial.</p>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <span>THREE.JS</span>
+                        <span>CANVAS</span>
+                        <span>CSS3</span>
+                        <span>VANILLA JS</span>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="https://brisa-delcielo.github.io/valkyrie" target="_blank" class="btn primary">EXPLORAR ↗</a>
+                        <a href="https://github.com/Brisa-delcielo/valkyrie" target="_blank" class="btn outline">CÓDIGO ↗</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="card-tag">INTERFAZ HUD & SIMULACIÓN</div>
+                    <h3>APEX — <i>Simulador Mecánico</i></h3>
+                    <p>Interfaz estilo HUD con animación técnica en Canvas. Simula el funcionamiento dinámico de un motor calculando velocidad angular (RPM), relación peso/potencia y física de inercia.</p>
+
+                    <div class="field-notes">
+                        <span class="notes-label">ENFOQUE TÉCNICO</span>
+                        <p>Cálculos matemáticos en tiempo real renderizados mediante canvas bidimensional interactivo.</p>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <span>HTML5 CANVAS</span>
+                        <span>FÍSICA 2D</span>
+                        <span>VANILLA JS</span>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="https://brisa-delcielo.github.io/apex/" target="_blank" class="btn primary">EXPLORAR ↗</a>
+                        <a href="https://github.com/Brisa-delcielo/apex" target="_blank" class="btn outline">CÓDIGO ↗</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="card-tag">APIS & DASHBOARD</div>
+                    <h3>MISIÓN — <i>Dashboard Astronómico</i></h3>
+                    <p>Plataforma de visualización en tiempo real conectada a las APIs oficiales de la NASA (APOD y NeoWS) para el rastreo de eventos espaciales y asteroides cercanos.</p>
+
+                    <div class="field-notes">
+                        <span class="notes-label">ENFOQUE TÉCNICO</span>
+                        <p>Integración de servicios REST, manejo de estados asíncronos y maquetación de datos astronómicos.</p>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <span>VANILLA JS</span>
+                        <span>NASA APIS</span>
+                        <span>CSS GRID</span>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="https://brisa-delcielo.github.io/mision/" target="_blank" class="btn primary">EXPLORAR ↗</a>
+                        <a href="https://github.com/Brisa-delcielo/mision" target="_blank" class="btn outline">CÓDIGO ↗</a>
+                    </div>
+                </article>
+
             </div>
         </section>
 
     </main>
 
     <footer>
-        <p>© 2026 BRISA DEL CIELO — INSPIRADO EN LA ATMÓSFERA DE JÚPITER</p>
+        <p>© 2026 BRISA DEL CIELO — ARCHIVO DE ARTE, CIENCIA Y CÓDIGO</p>
     </footer>
 
     <script>
