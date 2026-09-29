@@ -491,23 +491,20 @@ footer {
 }
 
 /* RESPONSIVE & OPTIMIZACIÓN MÓVIL */
-@media (max-width: 900px) {
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
 @media (max-width: 768px) {
     body {
         padding: 0 16px;
     }
 
+    /* PLANETA JÚPITER: CÍRCULO PERFECTO EN MÓVIL */
     .jupiter-background {
-        width: 260px;
-        height: 260px;
-        right: -130px; 
+        width: 250px !important;
+        height: 250px !important;
+        aspect-ratio: 1 / 1 !important; /* Fuerza proporción 1:1 */
+        border-radius: 50% !important; /* Garantiza borde circular */
+        right: -125px; /* Exactamente la mitad de su ancho para alineación precisa */
         top: 35%;
-        transform: translateY(-50%);
+        transform: translateY(-50%) !important; /* Elimina rotaciones/deformaciones externas */
         filter: contrast(1.1) brightness(0.65);
         box-shadow: -15px 0 30px rgba(82, 62, 25, 0.5);
     }
